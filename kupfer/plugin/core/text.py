@@ -48,7 +48,7 @@ class PathTextSource (TextSource):
 		yield FileLeaf
 
 def is_url(text):
-	"""If @text is an URL, return a cleaned-up URL, else return None"""
+	"""If @text is an URL, return a cleaned-up URL, else return None
 	text = text.strip()
 	components = list(urlparse.urlparse(text))
 	domain = "".join(components[1:])
@@ -66,7 +66,8 @@ def is_url(text):
 			url = text
 		name = ("".join(components[1:3])).strip("/")
 		if name:
-			return url
+            return url"""
+        return False
 
 def try_unquote_url(url):
 	"""Try to turn an URL-escaped string into a Unicode string
